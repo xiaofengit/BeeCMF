@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
+    "name": "xiaofengit/BeeCMF",
+    "description": "小蜂内容管理框架（基于Laravel 5.5）.",
+    "keywords": ["framework", "laravel cmf", "xiaofengit", "beecmf"],
+    "license": "",
     "type": "project",
     "require": {
         "php": ">=7.0.0",
