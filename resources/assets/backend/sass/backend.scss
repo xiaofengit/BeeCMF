@@ -1,0 +1,58 @@
+/* 改变主题色变量 */
+//$--color-primary: #ff0000;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+$header-height: 80px;
+
+*{
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-weight: 400;
+    font-size: 14px;
+}
+
+html, body, .wrapper, .aside-menu, .main-container {
+	height: 100%;
+}
+
+.wrapper{
+	height: 100%;
+}
+
+.top-header {
+	background-color: $--color-primary;
+	height: $header-height;
+}
+
+.logo-text {
+	vertical-align: middle;
+	color: #ffffff;
+	display: inline-block;
+	height: $header-height;
+	line-height:$header-height;
+	font-size: 22px;
+    text-decoration: none;
+}
+
+.header-operations {
+	display: inline-block;
+    float: right;
+    padding-right: 30px;
+    height: 100%;
+}
+
+.header-operations li {
+	color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px;
+    margin: 0 10px;
+    line-height: $header-height;
+    cursor: pointer;
+}

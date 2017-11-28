@@ -13,4 +13,13 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+
+Route::any('user/profile', function() {
+	$url = route('welcome');
+	echo "<a href='{$url}'>welcome</a>";
+})->name('p');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
