@@ -17,7 +17,12 @@ body {
     font-size: 14px;
 }
 
-html, body, .wrapper, .aside-menu, .main-container {
+html,
+body,
+.wrapper,
+.aside-menu,
+.main-container,
+.el-menu {
 	height: 100%;
 }
 
@@ -55,4 +60,14 @@ html, body, .wrapper, .aside-menu, .main-container {
     margin: 0 10px;
     line-height: $header-height;
     cursor: pointer;
+}
+.el-menu {
+    border-right: 1px solid #e6e6e6;
+    list-style: none;
+}
+.container-footer {
+    border-top: 1px solid #e6e6e6;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
 }
