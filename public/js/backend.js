@@ -25819,7 +25819,115 @@ function required(rule, value, source, errors, options, type) {
 /* 100 */,
 /* 101 */,
 /* 102 */,
-/* 103 */,
+/* 103 */
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
 /* 104 */,
 /* 105 */,
 /* 106 */,
@@ -25849,6 +25957,8 @@ window.Vue = __webpack_require__(28);
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_element_ui___default.a);
+
+Vue.component('aside-menu', __webpack_require__(192));
 
 var backend = new Vue({
   el: '#backend'
@@ -65374,6 +65484,214 @@ exports.__esModule = true;
 exports.isDef = isDef;
 function isDef(val) {
   return val !== undefined && val !== null;
+}
+
+/***/ }),
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(103)
+/* script */
+var __vue_script__ = __webpack_require__(193)
+/* template */
+var __vue_template__ = __webpack_require__(194)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\backend\\js\\components\\AsideMenu.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-53d4cc88", Component.options)
+  } else {
+    hotAPI.reload("data-v-53d4cc88", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 193 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            isCollapse: false
+        };
+    }
+});
+
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "el-menu",
+    {
+      staticClass: "el-menu-vertical-demo",
+      attrs: { "default-active": "1-1", collapse: _vm.isCollapse }
+    },
+    [
+      _c(
+        "el-submenu",
+        { attrs: { index: "1" } },
+        [
+          _c("template", { slot: "title" }, [
+            _c("i", { staticClass: "el-icon-location" }),
+            _vm._v(" "),
+            _c("span", [_vm._v("导航一")])
+          ]),
+          _vm._v(" "),
+          _c(
+            "el-menu-item-group",
+            [
+              _c("template", { slot: "title" }, [_vm._v("分组一")]),
+              _vm._v(" "),
+              _c("el-menu-item", { attrs: { index: "1-1" } }, [
+                _vm._v("选项1")
+              ]),
+              _vm._v(" "),
+              _c("el-menu-item", { attrs: { index: "1-2" } }, [_vm._v("选项2")])
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "el-menu-item-group",
+            { attrs: { title: "分组2" } },
+            [
+              _c("el-menu-item", { attrs: { index: "1-3" } }, [_vm._v("选项3")])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "el-submenu",
+            { attrs: { index: "1-4" } },
+            [
+              _c("template", { slot: "title" }, [_vm._v("选项4")]),
+              _vm._v(" "),
+              _c("el-menu-item", { attrs: { index: "1-4-1" } }, [
+                _vm._v("选项1")
+              ])
+            ],
+            2
+          )
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c("el-menu-item", { attrs: { index: "2" } }, [
+        _c("i", { staticClass: "el-icon-menu" }),
+        _vm._v(" "),
+        _c("span", { attrs: { slot: "title" }, slot: "title" }, [
+          _vm._v("导航二")
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "el-submenu",
+        { attrs: { index: "setting" } },
+        [
+          _c("template", { slot: "title" }, [
+            _c("i", { staticClass: "el-icon-setting" }),
+            _vm._v(" "),
+            _c("span", [_vm._v("设置")])
+          ]),
+          _vm._v(" "),
+          _c("el-menu-item", { attrs: { index: "11" } }, [
+            _c("a", { attrs: { href: "#" } }, [_vm._v("网站设置")])
+          ])
+        ],
+        2
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-53d4cc88", module.exports)
+  }
 }
 
 /***/ })

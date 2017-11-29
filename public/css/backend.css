@@ -63265,3 +63265,10 @@ body,
   font-size: 12px;
 }
 
+.aside-menu a {
+  color: #2d2f33;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+}
+
