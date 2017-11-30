@@ -17,7 +17,7 @@
     <div id="backend" class="wrapper">
         {{-- Layout --}}
         <el-container class="wrapper">
-            <el-header class="top-header" height="80px">
+            <el-header class="top-header">
                 <a class="logo-text" href="{{ url('backend') }}">BeeCMF</a>
                 <ul class="header-operations">
                     <li>修改密码</li>
@@ -26,8 +26,9 @@
                 </ul>
             </el-header>
             <el-container>
-                <el-aside class="aside-menu">
-                    <aside-menu></aside-menu>
+                <el-aside width="210px" class="aside-menu" v-bind:class="{'menu-close':isCollapse}">
+                    <el-button class="aside-menu-collapse-btn" :plain="true" icon="el-icon-menu" @click="isCollapse = !isCollapse"></el-button>
+                    <aside-menu :collapse="isCollapse"></aside-menu>
                 </el-aside>
                 <el-container>
                     <el-main class>
@@ -38,7 +39,13 @@
                             <el-breadcrumb-item>活动详情</el-breadcrumb-item>
                         </el-breadcrumb>
 
-                        <el-table>
+                        <el-form :inline="true" class="search-form-inline">
+                            <el-form-item label="审批人">
+                                <el-input placeholder="审批人"></el-input>
+                            </el-form-item>
+                        </el-form>
+
+                        <el-table class="data-table" :border="true">
                             <el-table-column
                                 label="姓名">
                             </el-table-column>

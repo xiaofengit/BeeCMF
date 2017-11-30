@@ -13,5 +13,13 @@ Vue.use(ElementUI);
 Vue.component('aside-menu', require('./components/AsideMenu.vue'));
 
 const backend = new Vue({
-	el : '#backend'
+	el : '#backend',
+	data: {
+		isCollapse: false,
+	},
+	methods: {
+		menuCollapse: function(event) {
+			console.log(111);
+		}
+	}
 });

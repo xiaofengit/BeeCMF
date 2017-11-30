@@ -6,7 +6,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @import "~element-ui/packages/theme-chalk/src/index";
 
-$header-height: 80px;
+$header-height: 60px;
 
 *{
 	padding: 0;
@@ -21,8 +21,7 @@ html,
 body,
 .wrapper,
 .aside-menu,
-.main-container,
-.el-menu {
+.main-container {
 	height: 100%;
 }
 
@@ -61,9 +60,10 @@ body,
     line-height: $header-height;
     cursor: pointer;
 }
-.el-menu {
+.aside-menu {
     border-right: 1px solid #e6e6e6;
     list-style: none;
+    position: relative;
 }
 .container-footer {
     border-top: 1px solid #e6e6e6;
@@ -76,4 +76,31 @@ body,
     text-decoration: none;
     display: inline-block;
     width: 100%;
+}
+.aside-menu-collapse-btn{
+    width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+}
+.el-menu {
+    border: none;
+}
+.aside-menu.menu-close{
+    width: auto!important;
+}
+.el-menu--collapse{
+    width: auto;
+}
+.aside-menu .is-active a {
+    color: #409EFF;
+}
+.search-form-inline {
+    margin-top: 20px;
+    padding-top: 25px;
+    background-color: #f2f2f2;
+    padding-left: 10px;
+}
+.data-table {
+    margin-top: 30px;
 }
