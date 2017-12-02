@@ -63222,6 +63222,11 @@ body,
   cursor: pointer;
 }
 
+.header-operations a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .aside-menu {
   border-right: 1px solid #e6e6e6;
   list-style: none;
@@ -63274,5 +63279,13 @@ body,
 
 .data-table {
   margin-top: 30px;
+}
+
+.login-form {
+  border: 1px solid #efefef;
+  margin-top: 30px;
+  padding: 30px 40px;
+  background: #efefef;
+  border-radius: 10px;
 }
 
