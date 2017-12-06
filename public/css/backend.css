@@ -482,7 +482,7 @@
 
 @font-face {
   font-family: 'element-icons';
-  src: url(/fonts/vendor/_element-ui@2.0.4@element-ui/lib/theme-chalk/element-icons.woff?9b70ee41d12a1cf127400d23534f7efc) format("woff"), url(/fonts/vendor/_element-ui@2.0.4@element-ui/lib/theme-chalk/element-icons.ttf?27c72091ab590fb5d1c3ef90f988ddce) format("truetype");
+  src: url(/fonts/vendor/element-ui/lib/theme-chalk/element-icons.woff?2fad952a20fbbcfd1bf2ebb210dccf7a) format("woff"), url(/fonts/vendor/element-ui/lib/theme-chalk/element-icons.ttf?6f0a76321d30f3c8120915e57f7bd77e) format("truetype");
   /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
   font-weight: normal;
   font-style: normal;
@@ -2797,6 +2797,19 @@
   width: 6px;
 }
 
+.el-input .el-input__clear {
+  color: #b4bccc;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.el-input .el-input__clear:hover {
+  color: #878d99;
+}
+
 .el-input__inner {
   -webkit-appearance: none;
   background-color: #fff;
@@ -3495,9 +3508,9 @@
   position: relative;
   cursor: pointer;
   font-size: 12px;
-  height: 18px;
-  width: 18px;
-  line-height: 18px;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
   vertical-align: middle;
   top: -1px;
   right: -5px;
@@ -4917,6 +4930,16 @@
   height: 14px;
 }
 
+.el-select__multiple-text {
+  margin-left: 15px;
+  color: #5a5e66;
+  font-size: 14px;
+  display: inline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .el-select__close {
   cursor: pointer;
   position: absolute;
@@ -5056,6 +5079,7 @@
 .el-pagination .btn-next .el-icon {
   display: block;
   font-size: 12px;
+  font-weight: bold;
 }
 
 .el-pagination .btn-prev {
@@ -5141,6 +5165,42 @@
   margin: 0;
 }
 
+.el-pagination.is-background .btn-prev,
+.el-pagination.is-background .btn-next,
+.el-pagination.is-background .el-pager li {
+  margin: 0 5px;
+  background-color: #f3f4f5;
+  color: #5a5e66;
+  min-width: 30px;
+  border-radius: 2px;
+}
+
+.el-pagination.is-background .btn-prev,
+.el-pagination.is-background .btn-next {
+  padding: 0;
+}
+
+.el-pagination.is-background .btn-prev.disabled,
+.el-pagination.is-background .btn-next.disabled {
+  color: #b4bccc;
+}
+
+.el-pagination.is-background .el-pager li:hover {
+  color: #409EFF;
+}
+
+.el-pagination.is-background .el-pager li.active {
+  background-color: #409EFF;
+  color: #fff;
+}
+
+.el-pagination.is-background.el-pagination--small .btn-prev,
+.el-pagination.is-background.el-pagination--small .btn-next,
+.el-pagination.is-background.el-pagination--small .el-pager li {
+  margin: 0 3px;
+  min-width: 22px;
+}
+
 .el-pager {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -5154,8 +5214,8 @@
   margin: 0;
 }
 
-.el-pager .el-icon-more::before {
-  vertical-align: -4px;
+.el-pager .more::before {
+  line-height: 30px;
 }
 
 .el-pager li {
@@ -6520,6 +6580,19 @@
 .el-input::-webkit-scrollbar-track-piece {
   background: #fff;
   width: 6px;
+}
+
+.el-input .el-input__clear {
+  color: #b4bccc;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.el-input .el-input__clear:hover {
+  color: #878d99;
 }
 
 .el-input__inner {
@@ -9154,7 +9227,7 @@
 }
 
 .el-button--text {
-  border: none;
+  border-color: transparent;
   color: #409EFF;
   background: transparent;
   padding-left: 0;
@@ -9172,6 +9245,12 @@
   color: #3a8ee6;
   border-color: transparent;
   background-color: transparent;
+}
+
+.el-button--text.is-disabled,
+.el-button--text.is-disabled:hover,
+.el-button--text.is-disabled:focus {
+  border-color: transparent;
 }
 
 .el-button-group {
@@ -10958,6 +11037,19 @@
   width: 6px;
 }
 
+.el-input .el-input__clear {
+  color: #b4bccc;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.el-input .el-input__clear:hover {
+  color: #878d99;
+}
+
 .el-input__inner {
   -webkit-appearance: none;
   background-color: #fff;
@@ -12023,6 +12115,19 @@
 .el-input::-webkit-scrollbar-track-piece {
   background: #fff;
   width: 6px;
+}
+
+.el-input .el-input__clear {
+  color: #b4bccc;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.el-input .el-input__clear:hover {
+  color: #878d99;
 }
 
 .el-input__inner {
@@ -17258,6 +17363,19 @@
   width: 6px;
 }
 
+.el-input .el-input__clear {
+  color: #b4bccc;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.el-input .el-input__clear:hover {
+  color: #878d99;
+}
+
 .el-input__inner {
   -webkit-appearance: none;
   background-color: #fff;
@@ -17956,9 +18074,9 @@
   position: relative;
   cursor: pointer;
   font-size: 12px;
-  height: 18px;
-  width: 18px;
-  line-height: 18px;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
   vertical-align: middle;
   top: -1px;
   right: -5px;
@@ -19378,6 +19496,16 @@
   height: 14px;
 }
 
+.el-select__multiple-text {
+  margin-left: 15px;
+  color: #5a5e66;
+  font-size: 14px;
+  display: inline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .el-select__close {
   cursor: pointer;
   position: absolute;
@@ -20426,7 +20554,7 @@
 }
 
 .el-button--text {
-  border: none;
+  border-color: transparent;
   color: #409EFF;
   background: transparent;
   padding-left: 0;
@@ -20444,6 +20572,12 @@
   color: #3a8ee6;
   border-color: transparent;
   background-color: transparent;
+}
+
+.el-button--text.is-disabled,
+.el-button--text.is-disabled:hover,
+.el-button--text.is-disabled:focus {
+  border-color: transparent;
 }
 
 .el-button-group {
@@ -22023,9 +22157,9 @@
   position: relative;
   cursor: pointer;
   font-size: 12px;
-  height: 18px;
-  width: 18px;
-  line-height: 18px;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
   vertical-align: middle;
   top: -1px;
   right: -5px;
@@ -22760,24 +22894,37 @@
 }
 
 .el-table .caret-wrapper {
-  position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 13px;
+  height: 34px;
   width: 24px;
+  vertical-align: middle;
   cursor: pointer;
   overflow: initial;
 }
 
 .el-table .sort-caret {
-  color: #878d99;
+  color: #b4bccc;
   width: 14px;
   overflow: hidden;
-  font-size: 13px;
+  font-size: 15px;
+  position: absolute;
+}
+
+.el-table .sort-caret.ascending {
+  top: 5px;
+}
+
+.el-table .sort-caret.descending {
+  bottom: 7px;
 }
 
 .el-table .ascending .sort-caret.ascending {
@@ -24311,9 +24458,9 @@
   position: relative;
   cursor: pointer;
   font-size: 12px;
-  height: 18px;
-  width: 18px;
-  line-height: 18px;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
   vertical-align: middle;
   top: -1px;
   right: -5px;
@@ -28603,6 +28750,19 @@
 .el-input::-webkit-scrollbar-track-piece {
   background: #fff;
   width: 6px;
+}
+
+.el-input .el-input__clear {
+  color: #b4bccc;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.el-input .el-input__clear:hover {
+  color: #878d99;
 }
 
 .el-input__inner {
@@ -34253,6 +34413,19 @@
   width: 6px;
 }
 
+.el-input .el-input__clear {
+  color: #b4bccc;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.el-input .el-input__clear:hover {
+  color: #878d99;
+}
+
 .el-input__inner {
   -webkit-appearance: none;
   background-color: #fff;
@@ -36287,6 +36460,11 @@
   margin-bottom: 12px;
 }
 
+.el-popover__reference:focus:not(.focusing),
+.el-popover__reference:focus:hover {
+  outline-width: 0;
+}
+
 /* BEM support Func
  -------------------------- */
 
@@ -38175,7 +38353,7 @@
 }
 
 .el-button--text {
-  border: none;
+  border-color: transparent;
   color: #409EFF;
   background: transparent;
   padding-left: 0;
@@ -38193,6 +38371,12 @@
   color: #3a8ee6;
   border-color: transparent;
   background-color: transparent;
+}
+
+.el-button--text.is-disabled,
+.el-button--text.is-disabled:hover,
+.el-button--text.is-disabled:focus {
+  border-color: transparent;
 }
 
 .el-button-group {
@@ -38700,6 +38884,19 @@
 .el-input::-webkit-scrollbar-track-piece {
   background: #fff;
   width: 6px;
+}
+
+.el-input .el-input__clear {
+  color: #b4bccc;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.el-input .el-input__clear:hover {
+  color: #878d99;
 }
 
 .el-input__inner {
@@ -41669,9 +41866,9 @@
   position: relative;
   cursor: pointer;
   font-size: 12px;
-  height: 18px;
-  width: 18px;
-  line-height: 18px;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
   vertical-align: middle;
   top: -1px;
   right: -5px;
@@ -44111,6 +44308,19 @@
 .el-input::-webkit-scrollbar-track-piece {
   background: #fff;
   width: 6px;
+}
+
+.el-input .el-input__clear {
+  color: #b4bccc;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.el-input .el-input__clear:hover {
+  color: #878d99;
 }
 
 .el-input__inner {
@@ -56684,6 +56894,19 @@
   width: 6px;
 }
 
+.el-input .el-input__clear {
+  color: #b4bccc;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.el-input .el-input__clear:hover {
+  color: #878d99;
+}
+
 .el-input__inner {
   -webkit-appearance: none;
   background-color: #fff;
@@ -59096,6 +59319,19 @@
   width: 6px;
 }
 
+.el-input .el-input__clear {
+  color: #b4bccc;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.el-input .el-input__clear:hover {
+  color: #878d99;
+}
+
 .el-input__inner {
   -webkit-appearance: none;
   background-color: #fff;
@@ -60412,7 +60648,7 @@
 }
 
 .el-button--text {
-  border: none;
+  border-color: transparent;
   color: #409EFF;
   background: transparent;
   padding-left: 0;
@@ -60430,6 +60666,12 @@
   color: #3a8ee6;
   border-color: transparent;
   background-color: transparent;
+}
+
+.el-button--text.is-disabled,
+.el-button--text.is-disabled:hover,
+.el-button--text.is-disabled:focus {
+  border-color: transparent;
 }
 
 .el-button-group {
