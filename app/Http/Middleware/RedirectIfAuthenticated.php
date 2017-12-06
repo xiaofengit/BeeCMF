@@ -18,7 +18,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            return strpos($request->path(), 'backend') === 0 ? redirect()->route('backend.index') : redirect('/home');
         }
 
         return $next($request);
