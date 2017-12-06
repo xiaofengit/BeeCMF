@@ -29,7 +29,7 @@
             </el-header>
             <el-main>
 	            <el-row>
-	            	<el-col :span="6" :offset="9">
+	            	<el-col :xs="12" :sm="12" :md="6" :offset="9">
 			            <el-form :model="loginForm" :rules="rules" class="login-form" ref="loginForm">
 			            	<el-form-item prop="email">
 			                	<el-input v-model="loginForm.email" placeholder="登录邮箱"></el-input>
@@ -41,14 +41,14 @@
 								<el-switch v-model="loginForm.remember"></el-switch>
 							</el-form-item>
 			                <el-form-item>
-			                    <el-button type="primary" @click="submitForm('loginForm')">登录</el-button>
+			                    <el-button type="primary" @click="submitForm('loginForm')"  v-loading.lock="loading">登录</el-button>
 			                </el-form-item>
 			            </el-form>
 		        	</el-col>
 	            </el-row>
 	            
 	        </el-main>
-            <el-footer class="container-footer" height="30px">
+            <el-footer class="container-footer login-footer" height="30px">
                 小蜂内容管理框架(BeeCMF) © 2017-{{ date('Y') }} <a href="http://www.xiaofengit.com" target="_blank">广州小蜂科技有限公司</a> 版权所有
             </el-footer>
         </el-container>

@@ -11,10 +11,12 @@
 | namespace 'App\Http\Controllers\Backend'
 |
 */
-Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@index')->name('backend.index');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('backend.login');
+Route::post('login', 'Auth\LoginController@login');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Authentication Routes...
 /*$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');

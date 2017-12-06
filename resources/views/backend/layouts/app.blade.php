@@ -22,7 +22,7 @@
                 <ul class="header-operations">
                     <li>修改密码</li>
                     <li>修改资料</li>
-                    <li>退出</li>
+                    <li><a href="{{ route('logout') }}">退出</a></li>
                 </ul>
             </el-header>
             <el-container>
