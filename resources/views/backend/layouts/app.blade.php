@@ -20,9 +20,9 @@
             <el-header class="top-header">
                 <a class="logo-text" href="{{ url('backend') }}">BeeCMF</a>
                 <ul class="header-operations">
-                    <li>修改密码</li>
+                    <li><a href="{{ route('backend.password.reset') }}">修改密码</li>
                     <li>修改资料</li>
-                    <li><a href="{{ route('logout') }}">退出</a></li>
+                    <li><a href="{{ route('backend.logout') }}">退出</a></li>
                 </ul>
             </el-header>
             <el-container>
@@ -32,41 +32,7 @@
                 </el-aside>
                 <el-container>
                     <el-main class>
-                        <el-breadcrumb separator-class="el-icon-arrow-right">
-                            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                            <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-                            <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-                            <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-                        </el-breadcrumb>
-
-                        <el-form :inline="true" class="search-form-inline">
-                            <el-form-item label="姓名">
-                                <el-input placeholder="姓名"></el-input>
-                            </el-form-item>
-                            <el-form-item label="时间">
-                                <el-date-picker
-                                    type="datetimerange"
-                                    range-separator="至"
-                                    start-placeholder="开始"
-                                    end-placeholder="结束">
-                                </el-date-picker>
-                            </el-form-item>
-                            <el-form-item>
-                                <el-button type="primary">搜索</el-button>
-                            </el-form-item>
-                        </el-form>
-
-                        <el-table class="data-table" :border="true">
-                            <el-table-column
-                                label="姓名">
-                            </el-table-column>
-                            <el-table-column
-                                label="姓名">
-                            </el-table-column>
-                            <el-table-column
-                                label="姓名">
-                            </el-table-column>
-                        </el-table>
+                        @yield('content')
                     </el-main>
                     <el-footer class="container-footer" height="30px">
                         小蜂内容管理框架(BeeCMF) © 2017-{{ date('Y') }} <a href="http://www.xiaofengit.com" target="_blank">广州小蜂科技有限公司</a> 版权所有

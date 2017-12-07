@@ -43,7 +43,6 @@ const app = new Vue({
 
 						axios.post('/backend/login', this.loginForm)
 						.then(function(response) {
-							console.log(response);
 							_v.loading = false;
 							if (response.status == 200) {
 								window.location.href = '/backend';
@@ -56,6 +55,9 @@ const app = new Vue({
 								//console.log(error.response.status);
 								//console.log(error.response.headers);
 								switch (error.response.status) {
+									case 423:
+										_v.$message.error('您的操作太频繁，请稍后再试');
+										break;
 									case 422:
 									default:
 										_v.$message.error('登录失败，请检查邮箱或者密码');
@@ -63,7 +65,7 @@ const app = new Vue({
 								}
 							} else {
 								// Something happened in setting up the request that triggered an Error
-	      						console.log('Error', error.message);
+	      						//console.log('Error', error.message);
 	      						_v.$message.error(error.message);
 							}
 							_v.loading = false;
@@ -71,7 +73,7 @@ const app = new Vue({
 							return false;
 						});
 					} else {
-						console.log('error submit.');
+						//console.log('error submit.');
 						return false;
 					}
 				})

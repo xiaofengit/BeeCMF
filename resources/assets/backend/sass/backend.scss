@@ -25,6 +25,10 @@ body,
 	height: 100%;
 }
 
+a{
+    text-decoration: none;
+}
+
 .wrapper{
 	height: 100%;
 }
@@ -119,4 +123,11 @@ body,
 }
 .login-footer {
     text-align: center;
+}
+.edit-form {
+    margin-top: 20px;
+    padding-top: 25px;
+}
+.edit-form .el-form-item.input {
+    max-width: 400px;
 }

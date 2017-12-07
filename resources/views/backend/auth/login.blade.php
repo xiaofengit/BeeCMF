@@ -1,3 +1,4 @@
+<!-- Stored in resource/views/backend/auth/login.blade.php -->
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -20,7 +21,7 @@
             <el-header class="top-header">
             	<el-row>
 	            	<el-col :span="12" :offset="6">
-                		<a class="logo-text" href="{{ url('backend') }}">BeeCMF</a>
+                		<a class="logo-text" href="{{ route('backend.index') }}">BeeCMF</a>
                 		<ul class="header-operations">
 		                    <li><a target="_blank" href="https://github.com/xiaofengit/BeeCMF">Github</a></li>
 		                </ul>

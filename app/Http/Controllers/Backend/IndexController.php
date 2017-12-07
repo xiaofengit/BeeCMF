@@ -3,20 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class IndexController extends Controller
+class IndexController extends BaseController
 {
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('auth:backend');
-	}
-
     /**
      * Show the application dashboard
      *
@@ -25,5 +14,15 @@ class IndexController extends Controller
     public function index()
     {
         return view('backend.index');
+    }
+
+    /**
+     * 修改密码表单
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showResetForm()
+    {
+    	return view('backend.password');
     }
 }

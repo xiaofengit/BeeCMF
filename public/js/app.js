@@ -11046,7 +11046,8 @@ module.exports = g;
 /* 22 */,
 /* 23 */,
 /* 24 */,
-/* 25 */
+/* 25 */,
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11143,10 +11144,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -11336,7 +11337,6 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 27 */,
 /* 28 */,
 /* 29 */,
 /* 30 */,
@@ -11873,7 +11873,7 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(26)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(27)))
 
 /***/ }),
 /* 54 */,
@@ -29032,7 +29032,7 @@ module.exports = __webpack_require__(78);
 var utils = __webpack_require__(2);
 var bind = __webpack_require__(47);
 var Axios = __webpack_require__(80);
-var defaults = __webpack_require__(25);
+var defaults = __webpack_require__(26);
 
 /**
  * Create an instance of Axios
@@ -29115,7 +29115,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(25);
+var defaults = __webpack_require__(26);
 var utils = __webpack_require__(2);
 var InterceptorManager = __webpack_require__(89);
 var dispatchRequest = __webpack_require__(90);
@@ -29647,7 +29647,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(2);
 var transformData = __webpack_require__(91);
 var isCancel = __webpack_require__(50);
-var defaults = __webpack_require__(25);
+var defaults = __webpack_require__(26);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -42837,7 +42837,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/Example.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -42847,9 +42847,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-650f2efa", Component.options)
+    hotAPI.createRecord("data-v-b6ebd97a", Component.options)
   } else {
-    hotAPI.reload("data-v-650f2efa", Component.options)
+    hotAPI.reload("data-v-b6ebd97a", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -42927,7 +42927,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-650f2efa", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-b6ebd97a", module.exports)
   }
 }
 

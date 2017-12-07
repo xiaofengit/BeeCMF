@@ -12,11 +12,12 @@
 |
 */
 Route::get('/', 'IndexController@index')->name('backend.index');
+Route::get('password/reset', 'IndexController@showResetForm')->name('backend.password.reset');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('backend.login');
 Route::post('login', 'Auth\LoginController@login');
-Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('logout', 'Auth\LoginController@logout')->name('backend.logout');
 
 // Authentication Routes...
 /*$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
