@@ -7,12 +7,6 @@
 
 require('./backend-bootstrap');
 
-window.Vue = require('vue');
-
-import ElementUI from 'element-ui';
-
-Vue.use(ElementUI);
-
 const app = new Vue({
 	el: "#login",
 	data: {

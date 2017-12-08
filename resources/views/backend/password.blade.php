@@ -8,7 +8,7 @@
         <el-breadcrumb-item>修改密码</el-breadcrumb-item>
     </el-breadcrumb>
 
-    <el-form label-width="100px" class="edit-form">
+    {{-- <el-form label-width="100px" class="edit-form">
     	<el-form-item class="input" label="旧密码">
     		<el-input name="old_password" placeholder=""></el-input>
     	</el-form-item>
@@ -22,5 +22,8 @@
     	<el-form-item>
             <el-button type="primary">提 交</el-button>
         </el-form-item>
-    </el-form>
+    </el-form> --}}
 @endsection
+
+@push('script')
+@endpush

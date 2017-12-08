@@ -4,11 +4,7 @@
  *
  */
 
-window.Vue = require('vue');
-
-import ElementUI from 'element-ui';
-
-Vue.use(ElementUI);
+require('./backend-bootstrap');
 
 Vue.component('aside-menu', require('./components/AsideMenu.vue'));
 

@@ -44,5 +44,7 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/backend.js') }}"></script>
+
+    @stack('script')
 </body>
 </html>
