@@ -20,7 +20,7 @@
             <el-header class="top-header">
                 <a class="logo-text" href="{{ url('backend') }}">BeeCMF</a>
                 <ul class="header-operations">
-                    <li><a href="{{ route('backend.password.reset') }}">修改密码</li>
+                    <li><a href="{{ route('backend.password.form') }}">修改密码</li>
                     <li>修改资料</li>
                     <li><a href="{{ route('backend.logout') }}">退出</a></li>
                 </ul>

@@ -12,7 +12,8 @@
 |
 */
 Route::get('/', 'IndexController@index')->name('backend.index');
-Route::get('password/reset', 'IndexController@showResetForm')->name('backend.password.reset');
+Route::get('password/reset', 'IndexController@showResetForm')->name('backend.password.form');
+Route::post('password/reset', 'IndexController@resetPassword')->name('backend.password.reset');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('backend.login');
